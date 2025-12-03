@@ -1,0 +1,38 @@
+2025-12-03 08:16:07,103 - INFO - 🐐Starting pipeline.
+2025-12-03 08:16:07,103 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 08:17:19,479 - INFO - 🐐Starting pipeline.
+2025-12-03 08:17:19,479 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 08:17:19,877 - INFO - Total records fetched: 250
+2025-12-03 08:17:19,888 - INFO - Data saved to capitals.csv
+2025-12-03 08:17:19,888 - INFO - ✅ API data retrieval completed.
+2025-12-03 08:17:19,888 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 08:17:19,975 - INFO - Bucket 'raw' already exists
+2025-12-03 08:17:19,977 - INFO - Bucket 'clean' already exists
+2025-12-03 08:17:19,983 - INFO - Processing: capitals.csv
+2025-12-03 08:17:20,004 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 08:17:20,004 - INFO - Transfer completed!
+2025-12-03 08:17:20,004 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 08:17:20,004 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 08:17:20,034 - INFO - Processing: capitals_clean.csv
+2025-12-03 08:17:20,056 - INFO - Created table: capitals_clean
+2025-12-03 08:17:20,067 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 08:17:20,067 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 08:17:20,067 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 08:17:28,008 - INFO - 🐐Starting pipeline.
+2025-12-03 08:17:28,008 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 08:17:28,362 - INFO - Total records fetched: 250
+2025-12-03 08:17:28,372 - INFO - Data saved to capitals.csv
+2025-12-03 08:17:28,373 - INFO - ✅ API data retrieval completed.
+2025-12-03 08:17:28,373 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 08:17:28,432 - INFO - Bucket 'raw' already exists
+2025-12-03 08:17:28,434 - INFO - Bucket 'clean' already exists
+2025-12-03 08:17:28,436 - INFO - Processing: capitals.csv
+2025-12-03 08:17:28,457 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 08:17:28,457 - INFO - Transfer completed!
+2025-12-03 08:17:28,457 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 08:17:28,457 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 08:17:28,486 - INFO - Processing: capitals_clean.csv
+2025-12-03 08:17:28,498 - INFO - Created table: capitals_clean
+2025-12-03 08:17:28,511 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 08:17:28,511 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 08:17:28,511 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
