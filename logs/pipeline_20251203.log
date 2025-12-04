@@ -36,3 +36,194 @@
 2025-12-03 08:17:28,511 - INFO - Inserted 250 rows into capitals_clean
 2025-12-03 08:17:28,511 - INFO - Transfer to PostgreSQL completed!
 2025-12-03 08:17:28,511 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 09:23:40,763 - INFO - 🐐Starting pipeline.
+2025-12-03 09:23:40,763 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 09:23:41,134 - INFO - Total records fetched: 250
+2025-12-03 09:23:41,142 - INFO - Data saved to capitals.csv
+2025-12-03 09:23:41,144 - INFO - ✅ API data retrieval completed.
+2025-12-03 09:23:41,144 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 09:24:51,238 - INFO - 🐐Starting pipeline.
+2025-12-03 09:24:51,239 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 09:24:51,568 - INFO - Total records fetched: 250
+2025-12-03 09:24:51,573 - INFO - Data saved to capitals.csv
+2025-12-03 09:24:51,574 - INFO - ✅ API data retrieval completed.
+2025-12-03 09:24:51,574 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 09:24:51,648 - INFO - Bucket 'raw' already exists
+2025-12-03 09:24:51,650 - INFO - Bucket 'clean' already exists
+2025-12-03 09:24:51,654 - INFO - Processing: capitals.csv
+2025-12-03 09:24:51,679 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 09:24:51,679 - INFO - Transfer completed!
+2025-12-03 09:24:51,679 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 09:24:51,679 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 09:24:51,728 - INFO - Processing: capitals_clean.csv
+2025-12-03 09:24:51,754 - INFO - Created table: capitals_clean
+2025-12-03 09:24:51,767 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 09:24:51,767 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 09:24:51,768 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 09:24:51,768 - INFO - 🚚 Starting transfer from PostgreSQL to AWS S3.
+2025-12-03 09:24:51,843 - INFO - Processing table: capitals_clean
+2025-12-03 09:24:51,855 - INFO - Retrieved 250 rows from capitals_clean
+2025-12-03 09:24:51,862 - INFO - Loading cached SSO token for my-sso
+2025-12-03 09:24:52,048 - WARNING - SSO token refresh attempt failed
+Traceback (most recent call last):
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/tokens.py", line 304, in _refresh_access_token
+    return self._attempt_create_token(token)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/tokens.py", line 263, in _attempt_create_token
+    response = self._client.create_token(
+        grantType=self._GRANT_TYPE,
+    ...<2 lines>...
+        refreshToken=token["refreshToken"],
+    )
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/client.py", line 602, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/client.py", line 1078, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.InvalidGrantException: An error occurred (InvalidGrantException) when calling the CreateToken operation: 
+2025-12-03 09:24:52,050 - WARNING - Refreshing temporary credentials failed during mandatory refresh period.
+Traceback (most recent call last):
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/credentials.py", line 600, in _protected_refresh
+    metadata = self._refresh_using()
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/credentials.py", line 750, in fetch_credentials
+    return self._get_cached_credentials()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/credentials.py", line 760, in _get_cached_credentials
+    response = self._get_credentials()
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/credentials.py", line 2317, in _get_credentials
+    token = initial_token_data.get_frozen_token().token
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/tokens.py", line 89, in get_frozen_token
+    self._refresh()
+    ~~~~~~~~~~~~~^^
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/tokens.py", line 102, in _refresh
+    self._protected_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/darrenraines/👽/DE/DE_Review1/.venv/lib/python3.13/site-packages/botocore/tokens.py", line 129, in _protected_refresh
+    raise TokenRetrievalError(
+    ...<2 lines>...
+    )
+botocore.exceptions.TokenRetrievalError: Error when retrieving token from sso: Token has expired and refresh failed
+2025-12-03 09:25:14,083 - INFO - 🐐Starting pipeline.
+2025-12-03 09:25:14,083 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 09:25:14,503 - INFO - Total records fetched: 250
+2025-12-03 09:25:14,511 - INFO - Data saved to capitals.csv
+2025-12-03 09:25:14,512 - INFO - ✅ API data retrieval completed.
+2025-12-03 09:25:14,512 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 09:25:14,610 - INFO - Bucket 'raw' already exists
+2025-12-03 09:25:14,612 - INFO - Bucket 'clean' already exists
+2025-12-03 09:25:14,617 - INFO - Processing: capitals.csv
+2025-12-03 09:25:14,649 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 09:25:14,649 - INFO - Transfer completed!
+2025-12-03 09:25:14,649 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 09:25:14,649 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 09:25:14,713 - INFO - Processing: capitals_clean.csv
+2025-12-03 09:25:14,733 - INFO - Created table: capitals_clean
+2025-12-03 09:25:14,755 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 09:25:14,755 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 09:25:14,756 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 09:25:14,756 - INFO - 🚚 Starting transfer from PostgreSQL to AWS S3.
+2025-12-03 09:25:14,854 - INFO - Processing table: capitals_clean
+2025-12-03 09:25:14,866 - INFO - Retrieved 250 rows from capitals_clean
+2025-12-03 09:25:14,880 - INFO - Loading cached SSO token for my-sso
+2025-12-03 09:25:16,596 - INFO - Uploaded capitals_clean.csv to S3 bucket: de-october-individual-folders
+2025-12-03 09:25:16,596 - INFO - Transfer to AWS S3 completed!
+2025-12-03 09:25:16,599 - INFO - ✅ Transfer from PostgreSQL to AWS S3 completed.
+2025-12-03 09:28:16,978 - INFO - 🐐Starting pipeline.
+2025-12-03 09:28:16,978 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 09:28:17,351 - INFO - Total records fetched: 250
+2025-12-03 09:28:17,360 - INFO - Data saved to capitals.csv
+2025-12-03 09:28:17,361 - INFO - ✅ API data retrieval completed.
+2025-12-03 09:28:17,361 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 09:28:17,434 - INFO - Bucket 'raw' already exists
+2025-12-03 09:28:17,436 - INFO - Bucket 'clean' already exists
+2025-12-03 09:28:17,439 - INFO - Processing: capitals.csv
+2025-12-03 09:28:17,460 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 09:28:17,460 - INFO - Transfer completed!
+2025-12-03 09:28:17,460 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 09:28:17,460 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 09:28:17,495 - INFO - Processing: capitals_clean.csv
+2025-12-03 09:28:17,508 - INFO - Created table: capitals_clean
+2025-12-03 09:28:17,521 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 09:28:17,521 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 09:28:17,521 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 09:28:17,521 - INFO - 🚚 Starting transfer from PostgreSQL to AWS S3.
+2025-12-03 09:28:17,567 - INFO - Processing table: capitals_clean
+2025-12-03 09:28:17,576 - INFO - Retrieved 250 rows from capitals_clean
+2025-12-03 09:28:17,582 - INFO - Loading cached SSO token for my-sso
+2025-12-03 09:28:19,133 - INFO - Uploaded Raines/capitals_clean.csv to S3 bucket: de-october-individual-folders
+2025-12-03 09:28:19,133 - INFO - Transfer to AWS S3 completed!
+2025-12-03 09:28:19,135 - INFO - ✅ Transfer from PostgreSQL to AWS S3 completed.
+2025-12-03 18:29:57,884 - INFO - 🐐Starting pipeline.
+2025-12-03 18:29:57,885 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 18:29:58,258 - INFO - Total records fetched: 250
+2025-12-03 18:29:58,265 - INFO - Data saved to capitals.csv
+2025-12-03 18:29:58,266 - INFO - ✅ API data retrieval completed.
+2025-12-03 18:29:58,266 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 18:29:58,389 - INFO - Bucket 'raw' already exists
+2025-12-03 18:29:58,391 - INFO - Bucket 'clean' already exists
+2025-12-03 18:29:58,396 - INFO - Processing: capitals.csv
+2025-12-03 18:29:58,425 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 18:29:58,425 - INFO - Transfer completed!
+2025-12-03 18:29:58,426 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 18:29:58,426 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 18:29:58,563 - INFO - Processing: capitals_clean.csv
+2025-12-03 18:29:58,581 - INFO - Created table: capitals_clean
+2025-12-03 18:29:58,597 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 18:29:58,598 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 18:29:58,598 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 18:29:58,598 - INFO - 🚚 Starting transfer from PostgreSQL to AWS S3.
+2025-12-03 18:29:58,695 - INFO - Processing table: capitals_clean
+2025-12-03 18:29:58,705 - INFO - Retrieved 250 rows from capitals_clean
+2025-12-03 18:29:58,718 - INFO - Loading cached SSO token for my-sso
+2025-12-03 18:30:00,152 - INFO - Uploaded Raines/capitals_clean.csv to S3 bucket: de-october-individual-folders
+2025-12-03 18:30:00,152 - INFO - Transfer to AWS S3 completed!
+2025-12-03 18:30:00,153 - INFO - ✅ Transfer from PostgreSQL to AWS S3 completed.
+2025-12-03 18:30:00,154 - INFO - 🚚 Starting transfer from AWS S3 to MinIO gold bucket.
+2025-12-03 18:30:00,281 - INFO - Created bucket 'gold' in MinIO
+2025-12-03 18:30:00,286 - INFO - Loading cached SSO token for my-sso
+2025-12-03 18:30:01,308 - INFO - Processing: Raines/capitals_clean.csv
+2025-12-03 18:30:01,627 - INFO - Uploaded 'capitals_clean.csv' to MinIO gold bucket
+2025-12-03 18:30:01,628 - INFO - Processing: Raines/clean/customers/customers_clean.csv
+2025-12-03 18:30:02,851 - INFO - Uploaded 'customers_clean.csv' to MinIO gold bucket
+2025-12-03 18:30:02,851 - INFO - Processing: Raines/raw/customers/extract.csv
+2025-12-03 18:30:03,718 - INFO - Uploaded 'extract.csv' to MinIO gold bucket
+2025-12-03 18:30:03,718 - INFO - Processing: Raines/sample_data1.csv
+2025-12-03 18:30:03,884 - INFO - Uploaded 'sample_data1.csv' to MinIO gold bucket
+2025-12-03 18:30:03,884 - INFO - Transfer completed! 4 file(s) transferred from AWS S3 to MinIO gold bucket
+2025-12-03 18:30:03,886 - INFO - ✅ Transfer from AWS S3 to MinIO gold bucket completed.
+2025-12-03 18:32:39,993 - INFO - 🐐Starting pipeline.
+2025-12-03 18:32:39,993 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-03 18:32:40,312 - INFO - Total records fetched: 250
+2025-12-03 18:32:40,317 - INFO - Data saved to capitals.csv
+2025-12-03 18:32:40,318 - INFO - ✅ API data retrieval completed.
+2025-12-03 18:32:40,319 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-03 18:32:40,408 - INFO - Bucket 'raw' already exists
+2025-12-03 18:32:40,410 - INFO - Bucket 'clean' already exists
+2025-12-03 18:32:40,413 - INFO - Processing: capitals.csv
+2025-12-03 18:32:40,437 - INFO - Uploaded: capitals_clean.csv
+2025-12-03 18:32:40,437 - INFO - Transfer completed!
+2025-12-03 18:32:40,438 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-03 18:32:40,438 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-03 18:32:40,489 - INFO - Processing: capitals_clean.csv
+2025-12-03 18:32:40,505 - INFO - Created table: capitals_clean
+2025-12-03 18:32:40,520 - INFO - Inserted 250 rows into capitals_clean
+2025-12-03 18:32:40,520 - INFO - Transfer to PostgreSQL completed!
+2025-12-03 18:32:40,521 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-03 18:32:40,521 - INFO - 🚚 Starting transfer from PostgreSQL to AWS S3.
+2025-12-03 18:32:40,598 - INFO - Processing table: capitals_clean
+2025-12-03 18:32:40,606 - INFO - Retrieved 250 rows from capitals_clean
+2025-12-03 18:32:40,615 - INFO - Loading cached SSO token for my-sso
+2025-12-03 18:32:42,121 - INFO - Uploaded Raines/capitals_clean.csv to S3 bucket: de-october-individual-folders
+2025-12-03 18:32:42,122 - INFO - Transfer to AWS S3 completed!
+2025-12-03 18:32:42,123 - INFO - ✅ Transfer from PostgreSQL to AWS S3 completed.
+2025-12-03 18:32:42,123 - INFO - 🚚 Starting transfer from AWS S3 to MinIO gold bucket.
+2025-12-03 18:32:42,221 - INFO - Bucket 'gold' already exists in MinIO
+2025-12-03 18:32:42,221 - INFO - Attempting to download 'Raines/capitals_clean.csv' from AWS S3 bucket 'de-october-individual-folders'
+2025-12-03 18:32:42,225 - INFO - Loading cached SSO token for my-sso
+2025-12-03 18:32:43,479 - INFO - Successfully downloaded 'Raines/capitals_clean.csv' from AWS S3
+2025-12-03 18:32:43,496 - INFO - Successfully uploaded 'capitals_clean.csv' to MinIO gold bucket
+2025-12-03 18:32:43,496 - INFO - Transfer completed! 'capitals_clean.csv' transferred from AWS S3 to MinIO gold bucket
+2025-12-03 18:32:43,498 - INFO - ✅ Transfer from AWS S3 to MinIO gold bucket completed.
