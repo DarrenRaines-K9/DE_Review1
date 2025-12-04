@@ -69,4 +69,4 @@ def transfer_raw_to_clean():
         )
         logger.info(f"Uploaded: {clean_file_name}")
 
-    logger.info("Transfer completed!")
+    logger.info("Transfer completed!🚚")

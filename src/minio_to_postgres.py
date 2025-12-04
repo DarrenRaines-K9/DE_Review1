@@ -92,4 +92,4 @@ def transfer_clean_to_postgres():
 
     cursor.close()
     conn.close()
-    logger.info("Transfer to PostgreSQL completed!")
+    logger.info("Transfer to PostgreSQL completed!🚚")

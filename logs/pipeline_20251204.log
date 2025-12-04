@@ -1,0 +1,33 @@
+2025-12-04 09:18:51,998 - INFO - 🐐Starting pipeline.
+2025-12-04 09:18:51,998 - INFO - Fetching data from API: https://restcountries.com/v3.1/all?fields=name,capital,population,region,subregion,languages,currencies,flags,area,timezones
+2025-12-04 09:18:52,405 - INFO - Total records fetched: 250
+2025-12-04 09:18:52,415 - INFO - Data saved to capitals.csv
+2025-12-04 09:18:52,417 - INFO - ✅ API data retrieval completed.
+2025-12-04 09:18:52,417 - INFO - 🚚 Starting transfer from raw to clean bucket.
+2025-12-04 09:18:52,504 - INFO - Bucket 'raw' already exists
+2025-12-04 09:18:52,506 - INFO - Bucket 'clean' already exists
+2025-12-04 09:18:52,510 - INFO - Processing: capitals.csv
+2025-12-04 09:18:52,534 - INFO - Uploaded: capitals_clean.csv
+2025-12-04 09:18:52,534 - INFO - Transfer completed!🚚
+2025-12-04 09:18:52,535 - INFO - ✅ Transfer from raw to clean bucket completed.
+2025-12-04 09:18:52,535 - INFO - 🚚 Starting transfer from clean bucket to PostgreSQL.
+2025-12-04 09:18:52,655 - INFO - Processing: capitals_clean.csv
+2025-12-04 09:18:52,683 - INFO - Created table: capitals_clean
+2025-12-04 09:18:52,695 - INFO - Inserted 250 rows into capitals_clean
+2025-12-04 09:18:52,695 - INFO - Transfer to PostgreSQL completed!🚚
+2025-12-04 09:18:52,695 - INFO - ✅ Transfer from clean bucket to PostgreSQL completed.
+2025-12-04 09:18:52,695 - INFO - 🚚 Starting transfer from PostgreSQL to AWS S3.
+2025-12-04 09:18:52,753 - INFO - Processing table: capitals_clean
+2025-12-04 09:18:52,762 - INFO - Retrieved 250 rows from capitals_clean
+2025-12-04 09:18:52,766 - INFO - Loading cached SSO token for my-sso
+2025-12-04 09:18:54,412 - INFO - Uploaded Raines/capitals_clean.csv to S3 bucket: de-october-individual-folders
+2025-12-04 09:18:54,412 - INFO - Transfer to AWS S3 completed!🚚
+2025-12-04 09:18:54,415 - INFO - ✅ Transfer from PostgreSQL to AWS S3 completed.
+2025-12-04 09:18:54,415 - INFO - 🚚 Starting transfer from AWS S3 to MinIO gold bucket.
+2025-12-04 09:18:54,495 - INFO - Bucket 'gold' already exists in MinIO
+2025-12-04 09:18:54,495 - INFO - Attempting to download 'Raines/capitals_clean.csv' from AWS S3 bucket 'de-october-individual-folders'
+2025-12-04 09:18:54,497 - INFO - Loading cached SSO token for my-sso
+2025-12-04 09:18:55,751 - INFO - Successfully downloaded 'Raines/capitals_clean.csv' from AWS S3
+2025-12-04 09:18:55,767 - INFO - Successfully uploaded 'capitals_clean.csv' to MinIO gold bucket
+2025-12-04 09:18:55,767 - INFO - Transfer completed! 'capitals_clean.csv' transferred from AWS S3 to MinIO gold bucket!🚚
+2025-12-04 09:18:55,769 - INFO - ✅ Transfer from AWS S3 to MinIO gold bucket completed.

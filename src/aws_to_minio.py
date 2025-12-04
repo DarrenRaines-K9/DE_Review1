@@ -62,7 +62,9 @@ def transfer_aws_to_minio():
         minio_s3.put_object(Bucket=gold_bucket, Key=target_file, Body=file_content)
         logger.info(f"Successfully uploaded '{target_file}' to MinIO gold bucket")
 
-        logger.info(f"Transfer completed! '{target_file}' transferred from AWS S3 to MinIO gold bucket")
+        logger.info(
+            f"Transfer completed! '{target_file}' transferred from AWS S3 to MinIO gold bucket!🚚"
+        )
 
     except Exception as e:
         logger.error(f"Failed to transfer '{s3_key}': {str(e)}")

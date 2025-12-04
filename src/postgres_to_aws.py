@@ -90,4 +90,4 @@ def transfer_postgres_to_aws():
 
     cursor.close()
     conn.close()
-    logger.info("Transfer to AWS S3 completed!")
+    logger.info("Transfer to AWS S3 completed!🚚")
